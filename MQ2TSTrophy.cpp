@@ -355,7 +355,7 @@ ItemClient* Cursor()
 
 inline bool InGame()
 {
-	return (GetGameState() == GAMESTATE_INGAME && GetCharInfo() && GetCharInfo()->pSpawn && GetPcProfile());
+	return GetGameState() == GAMESTATE_INGAME && pLocalPlayer && pLocalPC && GetPcProfile();
 }
 
 std::map <const std::string, std::vector<std::string> > mTrophies = {
@@ -410,7 +410,7 @@ std::map <const std::string, std::vector<std::string> > mTrophies = {
 	{ "Pottery", {
 		// Clay: 15%|50, 15%|50, Master:12%|36, Expert: 8%|24, Journey: 5%|12, Grandmaster (old): 5%|12,
 		// Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3
-		"Clay Flinger's Loop", "Master Potter Trophy", "Expert Potter Trophy", "Journeyman Potter Trophy", "Grandmaster Potter's Sculpter", 
+		"Clay Flinger's Loop", "Master Potter Trophy", "Expert Potter Trophy", "Journeyman Potter Trophy", "Grandmaster Potter's Sculpter",
 		"Freshman Potter Trophy", "Apprentice Potter Trophy", "Beginner Potter Trophy"
 		}
 	},
@@ -431,7 +431,7 @@ std::map <const std::string, std::vector<std::string> > mTrophies = {
 	},
 
 	{ "Poison", {
-		// Peerless: 15%|50, Master: 12%|36, Expert: 8%|24, Journey: 5%|12, Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3  
+		// Peerless: 15%|50, Master: 12%|36, Expert: 8%|24, Journey: 5%|12, Freshman: 4%|12, Apprentice: %2|6, Beginner: 1%|3
 		"Peerless Pestle", "Master Toxicologist Trophy", "Expert Toxicologist Trophy", "Journeyman Toxicologist Trophy",
 		"Freshman Toxicologist Trophy", "Apprentice Toxicologist Trophy", "Beginner Toxicologist Trophy"
 		}
